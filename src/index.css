@@ -1,0 +1,672 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background: linear-gradient(to right top, #ffffffec, #ffffffd5), url(./imagenes/prueba.JPG);
+    background-size: contain;
+    background-attachment: fixed;
+}
+
+header {
+    padding: 0 0;
+    margin: 0 0;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: x-large;
+    color: #9ab0c9;
+    text-shadow: 1px 1px #2e3457;
+}
+
+
+
+nav {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: auto;
+    font-size: 1.2rem;
+    font-weight: 600;
+    z-index: 10;
+    background: linear-gradient(to right top, #ffffffec, #ffffffd5), url(./imagenes/prueba.JPG);
+    background-size: contain;
+    background-attachment: fixed;
+
+
+    .inicio {
+        padding: 10px 10px;
+    }
+
+    .listaNav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .botonesNav {
+            padding: 5px 5px;
+        }
+
+
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        min-width: 160px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: all 0.3s;
+        pointer-events: none;
+        border-radius: 0.5rem;
+    }
+
+    .dropdown:hover .dropdown-content {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .dropdown-content a {
+        color: #374151;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background: #f3f4f6;
+    }
+
+}
+
+/* Se hizo uso de FlexBox para la disposición de los elementos */
+.banner {
+    /* contenedor */
+    margin-top: 65px;
+    padding: 20px 0px;
+
+    /* disposicion de elementos dentro del contenedor */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* imagen de fondo */
+    background: linear-gradient(to right top, #ebecef00, #d1bea800), url(./imagenes/fondoBannerDef.JPG);
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    width: 100%;
+
+    .bannerText {
+        padding: 30px 20px;
+        background-color: white;
+        margin-bottom: 50px;
+    }
+
+    .carousel {
+        margin-top: 100px;
+        width: 100%;
+        max-width: 200px;
+        /* Ajusta el ancho del carrusel */
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .carousel-inner {
+        display: flex;
+        transition: transform 0.5s ease;
+        /* Transición suave */
+    }
+
+    .carousel-inner img {
+        width: 100%;
+        flex-shrink: 0;
+        object-fit: contain;
+        /* Mantiene la proporción de las imágenes */
+        max-height: 100px;
+        /* Tamaño pequeño para las imágenes */
+
+    }
+}
+
+
+/* Se hizo uso de GRID para la dispocisión de los elementos. */
+.menuDeClases {
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    .tituloClases {
+        margin-top: 40px;
+    }
+
+
+
+    .clases {
+        padding: 20px 0px;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 3fr));
+        justify-items: center;
+
+
+
+
+        .yoga {
+
+
+
+            .front {
+
+                background: linear-gradient(to right top, #ebecef00, #d1bea800), url(./imagenes/Yoga\ front.jpg);
+                background-size: cover;
+            }
+
+            .back {
+
+                background: linear-gradient(to right top, #ebecef00, #d1bea800), url(./imagenes/Yoga\ back.jpg);
+                background-size: cover;
+            }
+        }
+
+        .yogaterapia {
+
+
+            .front {
+
+                background: linear-gradient(to right top, #ebecef00, #d1bea800), url(./imagenes/yogaterapia\ front.jpg);
+                background-size: cover;
+            }
+
+            .back {
+
+                background: linear-gradient(to right top, #ebecef00, #d1bea800), url(./imagenes/Yogaterapia\ back.jpg);
+                background-size: cover;
+            }
+        }
+
+        .acroyoga {
+
+
+            .front {
+
+                background: linear-gradient(to right top, #ebecef00, #d1bea800), url(./imagenes/acroyoga\ front.jpg);
+                background-size: cover;
+            }
+
+            .back {
+
+                background: linear-gradient(to right top, #ebecef00, #d1bea800), url(./imagenes/acroyoga\ back.jpg);
+                background-size: cover;
+            }
+        }
+
+
+
+
+    }
+
+
+}
+
+
+.masajeCard {
+    padding: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .masaje {
+        margin-top: 40px;
+        height: 300px;
+        width: 800px;
+
+
+        .front {
+
+            background: linear-gradient(to right top, #ebecef00, #d1bea800), url(./imagenes/masaje4.JPG);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .back {
+
+            background: linear-gradient(to right top, #ebecef00, #d1bea800), url(./imagenes/masaje1.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+    }
+
+}
+
+.menuCarrito {
+ margin-top: 65px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    .tituloCarrito {
+        margin-top: 40px;
+    }
+
+    .items {
+        padding: 20px 0px;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 4fr));
+        justify-items: center;
+
+        .rotating-card {
+            height: 200px;
+            width: 200px;
+        }
+
+
+        .claseSuelta {
+
+            .front {
+
+                background: linear-gradient(to right top, #ebecef00, #d1bea800), url(./imagenes/Yoga front.jpg);
+                background-size: cover;
+            }
+
+            .back {
+
+                background: linear-gradient(to right top, #33727ada, #988ef000), url(./imagenes/fondoBannerDef.JPG);
+                background-size: cover;
+            }
+        }
+
+        .cuatroClases {
+
+
+            .front {
+
+                background: linear-gradient(to right top, #ebecef00, #d1bea800), url(./imagenes/yogaterapia\ front.jpg);
+                background-size: cover;
+            }
+
+            .back {
+
+                background: linear-gradient(to right top, #33727ada, #988ef000), url(./imagenes/fondoBannerDef.JPG);
+                background-size: cover;
+            }
+        }
+
+        .ochoClases {
+
+
+            .front {
+
+                background: linear-gradient(to right top, #ebecef00, #d1bea800), url(./imagenes/acroyoga\ front.jpg);
+                background-size: cover;
+            }
+
+            .back {
+
+                background: linear-gradient(to right top, #33727ada, #988ef000), url(./imagenes/fondoBannerDef.JPG);
+                background-size: cover;
+            }
+        }
+
+        .masaje {
+
+
+            .front {
+
+                background: linear-gradient(to right top, #ebecef00, #d1bea800), url(./imagenes/masaje2.JPG);
+                background-size: cover;
+            }
+
+            .back {
+
+                background: linear-gradient(to right top, #33727ada, #988ef000), url(./imagenes/fondoBannerDef.JPG);
+                background-size: cover;
+            }
+        }
+
+
+
+
+    }
+
+
+}
+
+#carrito {
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    #lista-carrito {
+        margin-bottom: 20px;
+    }
+
+    p {
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+
+
+}
+
+.resenias {
+
+    margin-top: 100px;
+
+}
+
+.consultas {
+    padding: 20px 0px;
+}
+
+a {
+    text-decoration-color: none;
+    text-decoration: none;
+}
+
+/* ATRIBUTOS DE LOS BOTONES */
+button {
+    background: #9ab0c9;
+
+    border: none;
+    position: relative;
+    height: 30px;
+    font-size: 0.65em;
+    padding: 0 1.5em;
+    cursor: pointer;
+    transition: 800ms ease all;
+    outline: none;
+
+    a {
+        color: #fff;
+    }
+
+    span {
+        color: #fff;
+        font-size: large;
+    }
+}
+
+button:hover {
+    background: #fff;
+
+
+    a {
+        color: #9ab0c9;
+    }
+
+    span {
+        color: #9ab0c9;
+    }
+}
+
+button:before,
+button:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: #9ab0c9;
+    transition: 400ms ease all;
+}
+
+button:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+}
+
+button:hover:before,
+button:hover:after {
+    width: 100%;
+    transition: 800ms ease all;
+}
+
+/* ATRIBUTOS DE LAS CARTAS */
+
+.rotating-card {
+
+    height: 300px;
+    width: 225px;
+    perspective: 150rem;
+    position: relative;
+    box-shadow: none;
+    background: none;
+    margin: 30px;
+
+
+    .card-side {
+
+        border-radius: 10px;
+
+        .titulo {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.5);
+            width: 100%;
+            padding: 5px 0px;
+
+            h3 {
+                margin-left: 20px;
+            }
+
+        }
+
+        .descripcion {
+            margin: 20px 20px;
+
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 5px 5px 5px;
+
+            span {
+                font-size: small;
+            }
+
+
+        }
+
+
+    }
+
+
+
+}
+
+.rotating-card .card-side {
+    transition: all 0.8s ease;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.rotating-card .card-side.back {
+    transform: rotateY(-180deg);
+}
+
+.rotating-card:hover .card-side.front {
+    transform: rotateY(180deg);
+}
+
+.rotating-card:hover .card-side.back {
+    transform: rotateY(0deg);
+}
+
+/* FORMULARIO */
+
+.consultas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* Add a background color and some padding around the form */
+.container {
+    margin-top: 30px;
+    border-radius: 5px;
+    background-color: #f2f2f277;
+    padding: 20px;
+
+   
+}
+
+ input[type=text],
+    select,
+    textarea {
+        width: 100%;
+        /* Full width */
+        padding: 12px;
+        /* Some padding */
+        border: 1px solid #ccc;
+        /* Gray border */
+        border-radius: 4px;
+        /* Rounded borders */
+        box-sizing: border-box;
+        /* Make sure that padding and width stays in place */
+        margin-top: 6px;
+        /* Add a top margin */
+        margin-bottom: 16px;
+        /* Bottom margin */
+        resize: vertical
+            /* Allow the user to vertically resize the textarea (not horizontally) */
+    }
+
+    input[type=mail],input[type=tel] {
+        width: 100%;
+        /* Full width */
+        padding: 12px;
+        /* Some padding */
+        border: 1px solid #ccc;
+        /* Gray border */
+        border-radius: 4px;
+        /* Rounded borders */
+        box-sizing: border-box;
+        /* Make sure that padding and width stays in place */
+        margin-top: 6px;
+        /* Add a top margin */
+        margin-bottom: 16px;
+        /* Bottom margin */
+        resize: vertical
+            /* Allow the user to vertically resize the textarea (not horizontally) */
+    }
+
+/* FOOTER */
+
+footer {
+    float: right;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+.fa-instagram {
+    background: #833ab4;
+    background: linear-gradient(to right,
+            #833ab4, #fd1d1d, #fcb045);
+    color: white;
+}
+
+.fa-whatsapp {
+    background: #25D366;
+    color: white;
+}
+
+/* RESPONSIVIDAD PARA CELULARES */
+
+@media only screen and (max-width:750px) {
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+        width: 100%;
+        padding: 5px 0;
+
+        .listaNav {
+            justify-content: center;
+
+            .botonesNav {
+                padding: 0px 5px;
+
+            }
+        }
+
+
+    }
+
+    .masajeCard {
+
+        .masaje {
+            width: 80%;
+        }
+    }
+
+}
+
+/* ===== Productos  ===== */
+
+#lista-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+#lista-productos li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background-color: lightgrey;
+  text-align: center;
+}
