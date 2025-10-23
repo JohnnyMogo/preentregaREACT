@@ -9,7 +9,8 @@ function Navbar() {
         {/* <!-- Barra de navegación --> */}
         <nav>
             <div class="inicio">
-                <Link to="/">Inicio</Link> 
+                
+                <Link to="/"><h1>Sundara Studio</h1></Link> 
 
             </div>
 
