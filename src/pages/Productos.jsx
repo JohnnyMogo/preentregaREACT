@@ -41,20 +41,26 @@ export default function Productos() {
     alert(`Producto ${product.nombre} agregado al carrito.`);
   };
 
-  if (cargando) return <p>Cargando productos...</p>;
+  if (cargando) return;
+  <div className="cargando">
+    <div className="tituloCarrito">
+      <h3>Cargando productos</h3>
+    </div>
+  </div>;
+
   if (error) return <p>{error}</p>;
 
   return (
     <>
       <div className="menuCarrito">
-        <div class="tituloCarrito">
+        <div className="tituloCarrito">
           <h3>Arma tu pack de actividades</h3>
         </div>
 
         <div className="items">
           {productos.map((producto) => (
-            <div className="rotating-card claseSuelta">
-              <div class="card-side front">
+            <div className="rotating-card claseSuelta" key={producto.id}>
+              <div className="card-side front">
                 <div className="titulo">
                   <h3>{producto.nombre}</h3>
                 </div>
@@ -64,7 +70,7 @@ export default function Productos() {
                 <div className="card-side back">
                   <div className="descripcion">
                     <span>{producto.descripcion}</span> <br />
-                    <span>Valor: ${producto.precio}</span>
+                    <span>Valor: ${producto.precio.toFixed(2)}</span>
                   </div>
                   <button onClick={() => agregarProducto(producto)}>
                     Comprar
@@ -75,7 +81,6 @@ export default function Productos() {
           ))}
         </div>
 
-        
         <Carrito carrito={carrito} setCarrito={setCarrito} />
       </div>
     </>

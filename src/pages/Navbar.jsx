@@ -15,7 +15,7 @@ function Navbar() {
 
             <div class="listaNav">
 
-                <div class="botonesNav">
+                {/* <div class="botonesNav">
 
                     <div class="dropdown">
                         <button>
@@ -28,7 +28,7 @@ function Navbar() {
                         </button>
 
                     </div>
-                </div>
+                </div> */}
                 <div class="botonesNav">
                     <button>
                         <Link to="/servicios">Servicios</Link>
@@ -37,7 +37,7 @@ function Navbar() {
                 </div>
                 <div class="botonesNav">
                     <button>
-                        <Link to="/productos">Productos</Link>
+                        <Link to="/productos">Arma tu pack</Link>
                     </button>
 
                 </div>

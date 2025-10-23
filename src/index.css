@@ -263,7 +263,7 @@ nav {
 }
 
 .menuCarrito {
- margin-top: 65px;
+    margin-top: 65px;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -289,7 +289,7 @@ nav {
 
             .front {
 
-                background: linear-gradient(to right top, #ebecef00, #d1bea800), url(./imagenes/Yoga front.jpg);
+                background: linear-gradient(to right top, #ebecef00, #d1bea800), url(./imagenes/Yoga\ front.jpg);
                 background-size: cover;
             }
 
@@ -538,48 +538,49 @@ button:hover:after {
     background-color: #f2f2f277;
     padding: 20px;
 
-   
+
 }
 
- input[type=text],
-    select,
-    textarea {
-        width: 100%;
-        /* Full width */
-        padding: 12px;
-        /* Some padding */
-        border: 1px solid #ccc;
-        /* Gray border */
-        border-radius: 4px;
-        /* Rounded borders */
-        box-sizing: border-box;
-        /* Make sure that padding and width stays in place */
-        margin-top: 6px;
-        /* Add a top margin */
-        margin-bottom: 16px;
-        /* Bottom margin */
-        resize: vertical
-            /* Allow the user to vertically resize the textarea (not horizontally) */
-    }
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    /* Full width */
+    padding: 12px;
+    /* Some padding */
+    border: 1px solid #ccc;
+    /* Gray border */
+    border-radius: 4px;
+    /* Rounded borders */
+    box-sizing: border-box;
+    /* Make sure that padding and width stays in place */
+    margin-top: 6px;
+    /* Add a top margin */
+    margin-bottom: 16px;
+    /* Bottom margin */
+    resize: vertical
+        /* Allow the user to vertically resize the textarea (not horizontally) */
+}
 
-    input[type=mail],input[type=tel] {
-        width: 100%;
-        /* Full width */
-        padding: 12px;
-        /* Some padding */
-        border: 1px solid #ccc;
-        /* Gray border */
-        border-radius: 4px;
-        /* Rounded borders */
-        box-sizing: border-box;
-        /* Make sure that padding and width stays in place */
-        margin-top: 6px;
-        /* Add a top margin */
-        margin-bottom: 16px;
-        /* Bottom margin */
-        resize: vertical
-            /* Allow the user to vertically resize the textarea (not horizontally) */
-    }
+input[type=mail],
+input[type=tel] {
+    width: 100%;
+    /* Full width */
+    padding: 12px;
+    /* Some padding */
+    border: 1px solid #ccc;
+    /* Gray border */
+    border-radius: 4px;
+    /* Rounded borders */
+    box-sizing: border-box;
+    /* Make sure that padding and width stays in place */
+    margin-top: 6px;
+    /* Add a top margin */
+    margin-bottom: 16px;
+    /* Bottom margin */
+    resize: vertical
+        /* Allow the user to vertically resize the textarea (not horizontally) */
+}
 
 /* FOOTER */
 
@@ -650,23 +651,158 @@ footer {
 /* ===== Productos  ===== */
 
 #lista-productos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
 }
+
 #lista-productos li {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #f9f9f9;
-  padding: 1rem;
-  border-radius: 5px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 }
 
 footer {
-  background-color: lightgrey;
+    background-color: lightgrey;
+    text-align: center;
+}
+
+/* ESTILO DE CARRITO */
+
+.cargando {
+    margin-top: 50%;
+    margin-right: 50%;
+}
+
+.table-responsive {
+  width: 70%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  font-family: sans-serif;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  table-layout: fixed;
+}
+
+/* Encabezado */
+.table-responsive thead {
+  background-color: #9ab0c9;
+}
+
+.table-responsive th {
+  text-align:center;
+  padding: 12px;
+  font-weight: 600;
+  color: #1a2a40;
+  font-size: 0.95rem;
+}
+
+
+/* Filas */
+.table-responsive td {
+  padding: 12px;
+  border-top: 1px solid #e6f2ff;
+  color: #2c3e50;
+  font-size: 0.9rem;
+}
+
+/* Fila alternada */
+.table-responsive tbody tr:nth-child(even) {
+  background-color: #f4faff;
+}
+
+/* Hover */
+.table-responsive tbody tr:hover {
+  background-color: #e9f5ff;
+  transition: background-color 0.2s ease;
+}
+
+/* Responsividad (scroll horizontal) */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.botonCantidad {
+  width: 10px;
+  height: 10px;
+  margin-left: 5px;
+  font-weight: 700;
+  font-size: 0.55rem;
+
+}
+
+/* INICIO DE SESION */
+
+.login-container {
+  width: 100%;
+  max-width: 380px;
+  margin: 60px auto;
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-family: sans-serif;
+  color: #1a2a40;
+}
+
+/* Título */
+.login-container h2 {
   text-align: center;
+  margin-bottom: 24px;
+  color: #1a2a40;
+}
+
+/* Etiquetas e inputs */
+.login-container label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e6f2ff;
+  border-radius: 6px;
+  background-color: #f4faff;
+  font-size: 0.95rem;
+  color: #2c3e50;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.login-container input:focus {
+  border-color: #b9dfff;
+  background-color: #ffffff;
+  outline: none;
+}
+
+/* Botón */
+.login-container button {
+  width: 100%;
+  margin-top: 20px;
+ 
+}
+
+
+/* Responsivo */
+@media (max-width: 480px) {
+  .login-container {
+    margin: 40px 16px;
+    padding: 20px;
+  }
+}
+
+/* PAGAR */
+
+.pagar {
+    margin-top: 75px;
 }
