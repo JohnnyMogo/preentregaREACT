@@ -807,3 +807,68 @@ footer {
     margin-top: 75px;
     text-align: center;
 }
+
+
+.detalleProducto {
+    /* contenedor */
+    margin-top: 75px;
+    padding: 20px 0px;
+    border: 1px solid black;
+    /* disposicion de elementos dentro del contenedor */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* imagen de fondo */
+
+   
+
+
+    .descripcion {
+        
+        padding: 30px 20px;
+        background-color: white;
+        opacity: 0.75;
+
+        h6 {
+            margin-bottom: 50px;
+        }
+    }
+}
+
+.yogaDetalle {
+
+    background:  url(./imagenes/Yoga\ front.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+
+}
+
+.yogaterapiaDetalle {
+
+    background: url(./imagenes/yogaterapia\ front.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+
+}
+
+.acroyogaDetalle {
+
+    background:  url(./imagenes/acroyoga\ back.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+
+}
+
+.masajeDetalle {
+
+    background:  url(./imagenes/masaje1.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+
+}

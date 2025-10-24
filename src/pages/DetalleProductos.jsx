@@ -1,37 +1,49 @@
 import { Link, useParams, useLocation } from "react-router-dom";
 
 const ProductoDetalle = () => {
- 
-    const { id } = useParams();
-    const location = useLocation();
-    const producto = location.state?.producto;
- 
-if (!producto) {
+  const { id } = useParams();
+  const location = useLocation();
+  const actividad = location.state?.actividad;
+
+  if (!actividad) {
     return (
-      <div>
+      <div className="detalleProducto">
         <p>No se pudo cargar el producto</p>
-        <Link to="/carrito">
+        <Link to="/productos">
           <button>Volver a Productos</button>
         </Link>
       </div>
     );
   }
- 
-  return(
-    <>
-    <h2>Detalles del Producto {id}</h2>
-    <ul>
-        <li key={producto.id}>
-            {producto.nombre}
-            <br />
-            <p><strong>Descripción: </strong>{producto.descripcion}</p>
-            <p>Precio: ${producto.precio}</p>
-            <img src={producto.avatar} alt={producto.nombre} width="30%" />
-        </li>
-        <hr />
-        <Link to='/productos'><button>Volver</button></Link>
-    </ul>
-    
-    </>
+
+  return (
+    <div className={`detalleProducto ${actividad.className}Detalle`}>
+      <div class="descripcion">
+        <div>
+          <h2>{actividad.nombre}</h2>
+        </div>
+        <br />
+        <div>
+          <h5>Beneficios:</h5>
+          <p>{actividad.beneficios}</p>
+        </div>
+        <br />
+        <div>
+          <h5>¿Qué necesito para la práctica?</h5>
+          <p>{actividad.elementos}</p>
+        </div>
+        <br />
+        <div>
+          <h5>¿A quién esta diridiga esta clase?</h5>
+          <p>{actividad.publico}</p>
+        </div>
+      </div>
+
+      <hr />
+      <Link to="/servicios">
+        <button>Volver</button>
+      </Link>
+    </div>
   );
-}; export default ProductoDetalle;
+};
+export default ProductoDetalle;

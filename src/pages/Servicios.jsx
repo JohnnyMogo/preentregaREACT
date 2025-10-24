@@ -1,121 +1,91 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Servicios() {
+  const [actividades, setActividades] = useState([]);
+  const [cargando, setCargando] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch("https://68fa786cef8b2e621e8015d3.mockapi.io/actividades")
+      .then((respuesta) => respuesta.json())
+      .then((datos) => {
+        setActividades(datos);
+        setCargando(false);
+      })
+      .catch((error) => {
+        {
+          console.error("Error!,", error);
+        }
+        setError("Hubo un problema al cargar los productos.");
+        setCargando(false);
+      });
+  }, []);
+
   return (
     <>
-  
-        
+      <section className="menuDeClases">
+        <div className="tituloClases">
+          <h3>Te ofrecemos clases de...</h3>
+        </div>
 
-        <section className="menuDeClases">
-
-            <div className="tituloClases">
-                <h3>Te ofrecemos clases de...</h3>
-            </div>
-
-            <div className="clases">
-                <div className="rotating-card yoga">
-                    <div className="card-side front">
-                        <div className="titulo">
-                            <h3>Yoga</h3>
-                        </div>
-
-                    </div>
-                    <div className="card-side back">
-                        <div className="descripcion">
-                            <span>Fortalecemos y flexibilizamos nuestro cuerpo físico mientras cultivamos
-                                la atención plena a través de movimientos conscientes y respiración enfocada.</span>
-
-                        </div>
-                        <button>
-                            <a href="./pages/yoga.html">+ INFO</a>
-                        </button>
-
-                    </div>
-                </div>
-                <div className="rotating-card yogaterapia">
-                    <div className="card-side front">
-                        <div className="titulo">
-                            <h3>Yogaterapia</h3>
-                        </div>
-                    </div>
-                    <div className="card-side back">
-                        <div className="descripcion">
-                            <span>El yoga terapéutico te acompaña en tu proceso de recuperación, mejorando
-                                tu calidad de vida a través de movimientos y respiraciones conscientes. </span>
-
-                        </div>
-                        <button>
-                            <a href="./pages/yogaterapia.html">+ INFO</a>
-                        </button>
-
-                    </div>
-                </div>
-                <div className="rotating-card acroyoga">
-                    <div className="card-side front">
-                        <div className="titulo">
-                            <h3>Acroyoga</h3>
-                        </div>
-                    </div>
-                    <div className="card-side back">
-                        <div className="descripcion">
-                            <span>Combina la armonía del yoga, la emoción de las acrobacias y la
-                                profundidad de las artes terapéuticas. Trabajaremos la fuerza física y la destreza, al
-                                mismo
-                                tiempo que la confianza en ti mismo y en los demás.</span>
-
-                        </div>
-                        <button>
-                            <a href="./pages/acroyoga.html">+ INFO</a>
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-
-
-
-        </section>
-
-        
-
-        <section className="masajeCard">
-
-            <div>
-                <h3> Y si lo que buscas es un momento de relajación total...</h3>
-            </div>
-
-            <div className="rotating-card masaje">
+        <div className="clases">
+          {actividades
+            .filter((actividad) => actividad.id !== "4")
+            .map((actividad) => (
+              <div
+                className={`rotating-card ${actividad.className}`}
+                key={actividad.id}
+              >
                 <div className="card-side front">
-                    <div className="titulo">
-                        <h3>Masaje Tailandés</h3>
-                    </div>
+                  <div className="titulo">
+                    <h3>{actividad.nombre}</h3>
+                  </div>
                 </div>
                 <div className="card-side back">
-                    <div className="descripcion">
-                        <span>El masaje tailandés es una antigua técnica terapéutica que combina estiramientos, presión
-                            y manipulación de tejidos para aliviar el estrés, mejorar la flexibilidad y promover el
-                            bienestar general. Se caracteriza por su enfoque en líneas de energía y puntos de presión
-                            específicos, utilizando manos, codos, rodillas y pies para aplicar presión y estirar el
-                            cuerpo de manera fluida y armoniosa.</span>
-
-                    </div>
-                    <button>
-                        <a href="./pages/masaje.html">+ INFO</a>
-                    </button>
+                  <div className="descripcion">
+                    <span>{actividad.descripcion}</span>
+                  </div>
+                  <Link to={`/productos/${actividad.id}`} state={{actividad}}><button>Más detalles</button></Link>
                 </div>
-            </div>
+              </div>
+            ))}
+        </div>
+      </section>
 
-        </section>
-        <br />
-        <Link to="/">
+      <section className="masajeCard">
+        <div>
+          <h3> Y si lo que buscas es un momento de relajación total...</h3>
+        </div>
+
+        {actividades
+            .filter((actividad) => actividad.id == "4")
+            .map((actividad) => (
+              <div
+                className={`rotating-card ${actividad.className}`}
+                key={actividad.id}
+              >
+                <div className="card-side front">
+                  <div className="titulo">
+                    <h3>{actividad.nombre}</h3>
+                  </div>
+                </div>
+                <div className="card-side back">
+                  <div className="descripcion">
+                    <span>{actividad.descripcion}</span>
+                  </div>
+                  <button>
+                    <Link to={`/productos/${actividad.id}`} state={{actividad}}><button>Más detalles</button></Link>
+                  </button>
+                </div>
+              </div>
+            ))}
+
+      </section>
+      <br />
+      <Link to="/">
         <button>Volver al Inicio</button>
       </Link>
-
-        
-
-
-      
     </>
   );
 }
